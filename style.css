@@ -462,6 +462,7 @@ body.dark_mode .nav__logo:hover, body.dark_mode  .nav__link:hover {
 .tag-icon.office {
     color: var(--danger-color);
 }
+
 /*==================== DETAILS ====================*/
 .details {
     position: absolute;
@@ -473,9 +474,11 @@ body.dark_mode .nav__logo:hover, body.dark_mode  .nav__link:hover {
     z-index: 50;
     transition: right 0.2s ease-in-out;
     overflow: auto;
+    display: none;
 }
 .details.show {
     right: 0;
+    display: block;
 }
 
 .details .header {
@@ -561,10 +564,12 @@ body.dark_mode .nav__logo:hover, body.dark_mode  .nav__link:hover {
     z-index: 50;
     transition: right 0.2s ease-in-out;
     overflow: auto;
+    display: none;
 }
 .add__details.show,
 .edit__details.show {
     right: 0;
+    display: block;
 }
 
 .add__details .header,
@@ -647,6 +652,7 @@ body.dark_mode .nav__logo:hover, body.dark_mode  .nav__link:hover {
     }
     .details {
         position: static;
+        display: block;
     }
     #nav-before-btn {
         display: none;
@@ -677,6 +683,7 @@ body.dark_mode .nav__logo:hover, body.dark_mode  .nav__link:hover {
 @media screen and (min-width: 1200px) {
     .nav {
         position: static;
+        display: block;
         flex-shrink: 0;
     }
     #nav-toggle-btn {
