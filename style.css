@@ -549,7 +549,8 @@ body.dark_mode .nav__logo:hover, body.dark_mode  .nav__link:hover {
 }
 
 /*==================== ADD / EDIT ====================*/
-.add__details {
+.add__details,
+.edit__details {
     position: absolute;
     top: 0;
     right: -100%;
@@ -562,11 +563,13 @@ body.dark_mode .nav__logo:hover, body.dark_mode  .nav__link:hover {
     transition: right 0.2s ease-in-out;
     overflow: auto;
 }
-.add__details.show {
+.add__details.show,
+.edit__details.show {
     right: 0;
 }
 
-.add__details .header {
+.add__details .header,
+.edit__details .header {
     box-shadow: 0 2px 5px var(--shadow-color);
 }
 
@@ -592,6 +595,16 @@ body.dark_mode .nav__logo:hover, body.dark_mode  .nav__link:hover {
 
 .frm-details {
     padding: 1.5rem;
+}
+
+#edit-frm-image {
+    width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 1rem 1rem 0;
+    border: 3px solid var(--bg-first-color-light);
 }
 
 /*========== BROWSER SETTINGS ==========*/
