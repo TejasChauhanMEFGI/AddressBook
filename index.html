@@ -4,11 +4,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <!--==================== CSS ====================-->
+  <link rel="stylesheet" href="styles.css " />
+  <title>AddressBook</title>
 </head>
 
 <body>
+  <!--==================== MAIN ====================-->
+  <main class="main">
+    <!--==================== NAVBAR ====================-->
+    <nav class="nav show-menu" id="navbar">
+      <div class="header">
+        <a href="#" class="nav__logo">Address<strong>Book</strong></a>
+        <button id="nav-close-btn">
+          <span id="nav-close" class="nav__link material-symbols-outlined">
+            close
+          </span>
+        </button>
+      </div>
+  
+      <button id="add__details_btn" class="btn nav__btn">
+        <span class="icon material-symbols-outlined"> person_add </span>New Contact
+      </button>
 
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link active-link">
+              <span class="nav__icon material-symbols-outlined">
+                contacts
+              </span>
+              Contacts
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              <span class="nav__icon material-symbols-outlined">
+                bookmarks
+              </span>
+              Tags
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="nav__user">
+        <a href="#" class="btn nav__btn">
+          <span class="icon material-symbols-outlined"> logout </span>
+          Logout
+        </a>
+        <!-- Theme change button -->
+        <button id="theme-button">
+          <span id="change-theme" class="nav__link material-symbols-outlined">
+            dark_mode
+          </span>
+        </button>
+      </div>
+      </nav>
+      </main>
 </body>
 
 </html>
