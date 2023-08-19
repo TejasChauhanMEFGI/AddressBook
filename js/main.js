@@ -53,3 +53,21 @@ themeButton.addEventListener("click", () => {
   // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());
 });
+
+/*==================== DETAILS SHOW / HIDE ====================*/
+const details = document.getElementById("details"),
+  contact__items = document.querySelectorAll(".contact__item"),
+  detailsClose = document.getElementById("nav-before-btn");
+
+/*===== DETAILS SHOW =====*/
+if (contact__items) {
+  contact__items.forEach((n) =>
+    n.addEventListener("click", () => { details.classList.toggle("show"); hideMenu(); })
+  );
+}
+/*===== DETAILS HIDE =====*/
+if (detailsClose) {
+  detailsClose.addEventListener("click", () => {
+    details.classList.remove("show");
+  });
+}
