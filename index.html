@@ -1,67 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="./style.css" />
+    <title>AddressBook</title>
+    </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--==================== CSS ====================-->
-  <link rel="stylesheet" href="style.css" />
-  <title>AddressBook</title>
-</head>
+  <body>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== NAVBAR ====================-->
+      <div id="navbar_bg_mobile"></div>
+      <nav class="nav" id="navbar">
+        <div class="header">
+          <a href="#" class="nav__logo">Address<strong>Book</strong></a>
+          <button id="nav-close-btn">
+            <span id="nav-close" class="nav__link material-symbols-outlined">
+              close
+            </span>
+          </button>
+        </div>
 
-<body>
-  <!--==================== MAIN ====================-->
-  <main class="main">
-    <!--==================== NAVBAR ====================-->
-    <nav class="nav show-menu" id="navbar">
-      <div class="header">
-        <a href="#" class="nav__logo">Address<strong>Book</strong></a>
-        <button id="nav-close-btn">
-          <span id="nav-close" class="nav__link material-symbols-outlined">
-            close
-          </span>
-        </button>
-      </div>
+        <button id="add__details_btn" class="btn nav__btn">
+          <span class="icon material-symbols-outlined"> person_add </span>New
+          Contact
+          </button>
 
-      <button id="add__details_btn" class="btn nav__btn">
-        <span class="icon material-symbols-outlined"> person_add </span>New Contact
-      </button>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link active-link">
+                <span class="nav__icon material-symbols-outlined">
+                  contacts
+                </span>
+                Contacts
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">
+                <span class="nav__icon material-symbols-outlined">
+                  bookmarks
+                </span>
+                Tags
+              </a>
+            </li>
+          </ul>
+        </div>
 
-      <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#" class="nav__link active-link">
-              <span class="nav__icon material-symbols-outlined">
-                contacts
-              </span>
-              Contacts
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-              <span class="nav__icon material-symbols-outlined">
-                bookmarks
-              </span>
-              Tags
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="nav__user">
-        <a href="#" class="btn nav__btn">
-          <span class="icon material-symbols-outlined"> logout </span>
-          Logout
-        </a>
-        <!-- Theme change button -->
-        <button id="theme-button">
-          <span id="change-theme" class="nav__link material-symbols-outlined">
-            dark_mode
-          </span>
-        </button>
-      </div>
+        <div class="nav__user">
+          <a href="#" class="btn nav__btn">
+            <span class="icon material-symbols-outlined"> logout </span>
+            Logout
+          </a>
+          <!-- Theme change button -->
+          <button id="theme-button">
+            <span id="change-theme" class="nav__link material-symbols-outlined">
+              dark_mode
+            </span>
+          </button>
+        </div>
       </nav>
-      </main>
-</body>
-
+      <!--==================== LISTING ====================-->
+      <div class="listing" id="listing">
+        <div class="header">
+          <button id="nav-toggle-btn">
+            <span class="nav-toggle material-symbols-outlined"> menu </span>
+          </button>
+          <form class="search-frm" action="" method="get">
+            <input type="search" name="search" id="search" placeholder="Search" />
+            <button>
+              <span class="material-symbols-outlined"> search </span>
+            </button>
+          </form>
+        </div>
+        <div class="list">
+          <h3 class="title">Contacts</h3>
+          <ul class="contact__list">
+            <li class="contact__item active">
+              <img class="cimage" src="images/dp.jpg" alt="person" />
+              <div class="cinfo">
+                <h4 class="cname">John Doe</h4>
+                <p class="cemail">john.doe@gmail.com</p>
+                <p class="cmobile">9898989898</p>
+              </div>
+              <span class="tag-icon family material-symbols-outlined">
+                bookmark
+              </span>
+            </li>
+            <li class="contact__item">
+              <img class="cimage" src="images/dp.jpg" alt="person" />
+              <div class="cinfo">
+                <h4 class="cname">John Doe</h4>
+                <p class="cemail">john.doe@gmail.com</p>
+                <p class="cmobile">9898989898</p>
+              </div>
+              <span class="tag-icon family material-symbols-outlined">
+                bookmark
+              </span>
+            </li>
+            <li class="contact__item">
+              <img class="cimage" src="images/dp.jpg" alt="person" />
+              <div class="cinfo">
+                <h4 class="cname">John Doe</h4>
+                <p class="cemail">john.doe@gmail.com</p>
+                <p class="cmobile">9898989898</p>
+              </div>
+              <span class="tag-icon friend material-symbols-outlined">
+                bookmark
+              </span>
+            </li>
+            <li class="contact__item">
+              <img class="cimage" src="images/dp.jpg" alt="person" />
+              <div class="cinfo">
+                <h4 class="cname">John Doe</h4>
+                <p class="cemail">john.doe@gmail.com</p>
+                <p class="cmobile">9898989898</p>
+              </div>
+              <span class="tag-icon family material-symbols-outlined">
+                bookmark
+              </span>
+            </li>
+            <li class="contact__item">
+              <img class="cimage" src="images/dp.jpg" alt="person" />
+              <div class="cinfo">
+                <h4 class="cname">John Doe</h4>
+                <p class="cemail">john.doe@gmail.com</p>
+                <p class="cmobile">9898989898</p>
+              </div>
+              <span class="tag-icon friend material-symbols-outlined">
+                bookmark
+              </span>
+            </li>
+            <li class="contact__item">
+              <img class="cimage" src="images/dp.jpg" alt="person" />
+              <div class="cinfo">
+                <h4 class="cname">John Doe</h4>
+                <p class="cemail">john.doe@gmail.com</p>
+                <p class="cmobile">9898989898</p>
+              </div>
+              <span class="tag-icon office material-symbols-outlined">
+                bookmark
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <!--==================== MAIN JS ====================-->
+    <script src="./js/main.js"></script>
+  </body>
 </html>

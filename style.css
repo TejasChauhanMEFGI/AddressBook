@@ -190,6 +190,17 @@ img {
 
 /*==================== NAV ====================*/
 
+#navbar_bg_mobile {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 10;
+    display: none;
+}
+#navbar_bg_mobile.show {
+    display: block !important;
+}
+
 .nav {
     position: absolute;
     top: 0;
@@ -267,4 +278,121 @@ body.dark_mode .nav__logo:hover, body.dark_mode  .nav__link:hover {
 .nav__user .nav__btn {
     margin: 0;
     margin-right: auto;
+}
+
+/*==================== LIST ====================*/
+.listing {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-first-color-dark);
+    /* box-shadow: 1px 0px 5px var(--shadow-color); */
+}
+
+.nav-toggle {
+    font-size: var(--big-font-size);
+    margin: 0;
+    margin-right: 1rem;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: All 0.1s linear;
+}
+
+.nav-toggle:hover {
+    color: var(--first-color);
+    text-shadow: 1px 1px 5px var(--shadow-color);
+}
+
+.search-frm {
+    background-color: var(--bg-first-color-light);
+    border-radius: 0.5rem;
+    display: flex;
+    width: 100%;
+}
+
+.search-frm input {
+    border: none;
+    background: none;
+    color: var(--text-color);
+    padding: 0.7rem;
+    width: 100%;
+    font-size: var(--small-font-size);
+    outline: none;
+}
+
+.search-frm button {
+    margin-right: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+.search-frm button:hover {
+    color: var(--first-color);
+}
+
+.title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    padding: 1rem;
+    line-height: 3rem;
+}
+
+.contact__list {
+    height: calc(100vh - 7.75rem); /* 100vh - header - title */
+    overflow: auto;
+    padding: 0 1rem;
+    padding-bottom: 1.5rem;
+}
+
+.contact__item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 15px var(--shadow-color);
+    cursor: pointer;
+    transition: All 0.1s linear;
+}
+
+.contact__item:hover {
+    transform: translateY(-1px);
+    box-shadow: 10px 10px 20px var(--shadow-color);
+}
+
+.contact__item.active {
+    background-color: var(--first-color);
+    color: #FFF;
+}
+.contact__item.active .cname {
+    color: #FFF;
+}
+
+.cimage {
+    width: 60px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+.cinfo {
+    margin-right: auto;
+}
+.cname {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+}
+.cemail, .cmobile {
+    font-size: var(--small-font-size);
+    display: flex;
+    align-items: center;
+}
+
+.tag-icon.family {
+    color: var(--success-color);
+}
+.tag-icon.friend {
+    color: var(--warning-color);
+}
+.tag-icon.office {
+    color: var(--danger-color);
 }
