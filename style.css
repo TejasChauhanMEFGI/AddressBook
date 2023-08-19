@@ -188,6 +188,73 @@ img {
     margin-right: 0.5rem;
 }
 
+.form-control-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-control-group .form-control {
+    width: 100%;
+}
+
+.form-control {
+    margin-bottom: 1rem;
+}
+.form-control label {
+    display: block;
+}
+
+.form-control input+label {
+    display: inline-block;
+}
+
+.form-control input[type="text"],
+.form-control input[type="file"],
+.form-control input[type="email"],
+.form-control select,
+.form-control textarea {
+    border: none;
+    background-color: var(--bg-first-color-light);
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    padding: 0.7rem;
+    width: 100%;
+    height: 2.5rem;
+    font-size: var(--normal-font-size);
+    outline: none;
+}
+
+.form-control textarea {
+    resize: none;
+    height: 200px;
+}
+
+.form-control input[type="radio"] {
+    display: none;
+}
+
+.form-control input[type="radio"] + label {
+    margin-right: 1rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.form-control input[type="radio"] + label span {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 3px solid var(--bg-first-color-light);
+    border-radius: 50%;
+    vertical-align: baseline;
+    margin-right: 3px;
+}
+
+.form-control input[type="radio"]:checked + label span {
+    border: 3px solid var(--first-color);
+    background: var(--first-color);
+}
 /*==================== NAV ====================*/
 
 #navbar_bg_mobile {
@@ -481,6 +548,52 @@ body.dark_mode .nav__logo:hover, body.dark_mode  .nav__link:hover {
     margin-bottom: 1rem;
 }
 
+/*==================== ADD / EDIT ====================*/
+.add__details {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 700px;
+    height: 100vh;
+    background-color: var(--body-color);
+    box-shadow: -1px 0px 5px var(--shadow-color);
+    z-index: 50;
+    transition: right 0.2s ease-in-out;
+    overflow: auto;
+}
+.add__details.show {
+    right: 0;
+}
+
+.add__details .header {
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.nav-back {
+    font-size: var(--h1-font-size);
+    margin: 0;
+    padding: 0 1rem;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: All 0.1s linear;
+}
+
+.nav-back:hover {
+    color: var(--first-color);
+    text-shadow: 1px 1px 5px var(--shadow-color);
+}
+
+.card-title {
+    color: var(--first-color);
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-medium);
+}
+
+.frm-details {
+    padding: 1.5rem;
+}
+
 /*========== BROWSER SETTINGS ==========*/
 ::-webkit-scrollbar {
     width: .60rem;
@@ -497,6 +610,18 @@ body.dark_mode .nav__logo:hover, body.dark_mode  .nav__link:hover {
     background-color: var(--text-color-light);
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--text-color);
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--text-color);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--text-color);
+}
 /*==================== MEDIA QUERIES ====================*/
 
 /* For medium devices min-width: 768px */
@@ -525,6 +650,15 @@ body.dark_mode .nav__logo:hover, body.dark_mode  .nav__link:hover {
     .basic-info div {
         margin-right: auto;
         text-align: left;
+    }
+    .form-control-group {
+        flex-direction: row;
+    }
+    .form-control-group .form-control {
+        margin-right: 1rem;
+    }
+    .form-control-group .form-control:last-child {
+        margin-right: 0;
     }
 }
 /* For large devices min-width: 1024px/1200px */

@@ -71,3 +71,29 @@ if (detailsClose) {
     details.classList.remove("show");
   });
 }
+
+/*==================== ADD DETAILS SHOW / HIDE ====================*/
+const addDetails = document.getElementById("add__details"),
+  addDetailsBtn = document.getElementById("add__details_btn"),
+  addBackBtn = document.getElementById("add-back-btn"),
+  addCancelBtn = document.getElementById("add-cancel-btn");
+
+/*===== ADD DETAILS SHOW =====*/
+if (addDetailsBtn) {
+  addDetailsBtn.addEventListener("click", () => {
+    addDetails.classList.add("show");
+    editDetails.classList.remove("show");
+    hideMenu();
+  });
+}
+/*===== ADD DETAILS HIDE =====*/
+if (addBackBtn) {
+  addBackBtn.addEventListener("click", () => {
+    addDetails.classList.remove("show");
+  });
+}
+if (addCancelBtn) {
+  addCancelBtn.addEventListener("click", () => {
+    addDetails.classList.remove("show");
+  });
+}
