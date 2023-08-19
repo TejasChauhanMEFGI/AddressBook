@@ -20,3 +20,36 @@ const hideMenu = () => {
 if (navClose) {
   navClose.addEventListener("click", hideMenu);
 }
+
+/*==================== REMOVE MENU MOBILE ====================*/
+const navLink = document.querySelectorAll(".nav__link");
+if (navLink) {
+  navLink.forEach((n) => n.addEventListener("click", hideMenu));
+}
+
+/*==================== DARK LIGHT THEME ====================*/
+const themeButton = document.getElementById("theme-button");
+const themeIcon = document.getElementById("change-theme");
+
+const darkMode = "dark_mode";
+const lightMode = "light_mode";
+
+// We obtain the current theme
+const getCurrentTheme = () =>
+  document.body.classList.contains(darkMode) ? darkMode : lightMode;
+
+// Previously selected theme
+const selectedTheme = localStorage.getItem("selected-theme");
+if (selectedTheme) {
+  document.body.classList[selectedTheme === darkMode ? "add" : "remove"](darkMode);
+  themeIcon.innerHTML = selectedTheme === darkMode ? lightMode : darkMode;
+}
+
+// Activate / deactivate the theme manually with the button
+themeButton.addEventListener("click", () => {
+  // Add or remove the dark / light theme
+  document.body.classList.toggle(darkMode);
+  themeIcon.innerHTML = getCurrentTheme() == darkMode ? lightMode : darkMode;
+  // We save the theme and the current icon that the user chose
+  localStorage.setItem("selected-theme", getCurrentTheme());
+});
