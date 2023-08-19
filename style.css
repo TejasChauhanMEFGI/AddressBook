@@ -480,3 +480,63 @@ body.dark_mode .nav__logo:hover, body.dark_mode  .nav__link:hover {
 .basic-info, address{
     margin-bottom: 1rem;
 }
+
+/*========== BROWSER SETTINGS ==========*/
+::-webkit-scrollbar {
+    width: .60rem;
+    background-color: var(--scroll-bar-color);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-color-light);
+}
+
+/*==================== MEDIA QUERIES ====================*/
+
+/* For medium devices min-width: 768px */
+@media screen and (min-width: 768px){
+    .main {
+        display: flex;
+    }
+    .listing {
+        width: 400px;
+        flex-shrink: 0;
+    }
+    .details {
+        position: static;
+    }
+    #nav-before-btn {
+        display: none;
+    }
+    .basic-info {
+        flex-direction: row-reverse;
+    }
+    .basic-info img {
+        width: 100px;
+        margin: 0;
+        margin-left: 1rem;
+    }
+    .basic-info div {
+        margin-right: auto;
+        text-align: left;
+    }
+}
+/* For large devices min-width: 1024px/1200px */
+@media screen and (min-width: 1200px) {
+    .nav {
+        position: static;
+        flex-shrink: 0;
+    }
+    #nav-toggle-btn {
+        display: none;
+    }
+    #nav-close-btn {
+        display: none;
+    }
+}
