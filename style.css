@@ -96,7 +96,8 @@ body {
     background-color: var(--body-color);
     color: var(--text-color);
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
+    height: -webkit-fill-available;
     overflow: hidden;
 }
 
@@ -279,7 +280,7 @@ img {
     top: 0;
     left: -100%;
     width: 300px;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     background-color: var(--bg-first-color-light);
@@ -364,7 +365,7 @@ body.dark_mode .nav__link:hover {
 /*==================== LIST ====================*/
 .listing {
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     background-color: var(--bg-first-color-dark);
 }
 
@@ -416,7 +417,7 @@ body.dark_mode .nav__link:hover {
 }
 
 .contact__list {
-    height: calc(100vh - 10rem); /* 100vh - header - title */
+    height: calc(100dvh - 10rem); /* 100vh - header - title */
     overflow: auto;
     padding: 0 1rem;
     padding-bottom: 1.5rem;
@@ -485,7 +486,7 @@ body.dark_mode .nav__link:hover {
     top: 0;
     right: -100%;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     background-color: var(--body-color);
     z-index: 50;
     transition: right 0.3s ease-in-out;
@@ -533,7 +534,7 @@ body.dark_mode .nav__link:hover {
 
 .info {
     padding: 1.5rem;
-    height: calc(100vh - 5rem);
+    height: calc(100dvh - 5rem);
     overflow: auto;
 }
 
@@ -581,7 +582,7 @@ address {
     right: -100%;
     width: 100%;
     max-width: 700px;
-    height: 100vh;
+    height: 100dvh;
     background-color: var(--body-color);
     box-shadow: -1px 0px 5px var(--shadow-color);
     z-index: 50;
@@ -622,7 +623,7 @@ address {
 
 .frm-details {
     padding: 1.5rem;
-    height: calc(100vh - 5rem);
+    height: calc(100dvh - 5rem);
     overflow: auto;
 }
 
