@@ -293,7 +293,7 @@ img {
 }
 
 .nav__logo,
-.nav__link {
+.link-icon {
     color: var(--title-color);
     cursor: pointer;
     transition: All 0.1s linear;
@@ -306,12 +306,12 @@ img {
 }
 
 .nav__logo:hover,
-.nav__link:hover {
+.link-icon:hover {
     color: var(--first-color);
     text-shadow: 3px 3px 8px var(--shadow-color);
 }
 body.dark_mode .nav__logo:hover,
-body.dark_mode .nav__link:hover {
+body.dark_mode .link-icon:hover {
     text-shadow: 2px 2px 5px var(--shadow-color);
 }
 
@@ -333,18 +333,30 @@ body.dark_mode .nav__link:hover {
 
 .nav__item {
     border-bottom: 1px solid var(--bg-first-color);
-    transition: background-color 0.1s linear;
 }
 .nav__item:first-child {
     border-top: 1px solid var(--bg-first-color);
 }
-.nav__item:hover {
-    background-color: var(--bg-first-color);
-}
+
 .nav__link {
+    color: var(--title-color);
+    cursor: pointer;
+    transition: All 0.1s linear;
     padding: 1rem;
     display: flex;
     align-items: center;
+}
+
+.active-link,
+.nav__link:hover {
+    color: var(--first-color);
+    text-shadow: 3px 3px 8px var(--shadow-color);
+    background-color: var(--bg-first-color);
+}
+
+body.dark_mode .active-link,
+body.dark_mode .nav__link:hover {
+    text-shadow: 2px 2px 5px var(--shadow-color);
 }
 
 .nav__link .nav__icon {
