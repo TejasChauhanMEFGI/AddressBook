@@ -142,7 +142,6 @@
               <img class="cimage" src="images/dp.jpg" alt="person" />
               <div class="cinfo">
                 <h4 class="cname">John Doe</h4>
-                <p class="cemail">john.doe@gmail.com</p>
                 <p class="cmobile">9898989898</p>
               </div>
               <span class="tag-icon office material-symbols-outlined">
@@ -222,7 +221,7 @@
       </div>
 
       <!--==================== ADD DETAILS ====================-->
-      <div class="add__details" id="add__details">
+      <div class="add__details show" id="add__details">
         <div class="header">
           <button id="add-back-btn">
             <span class="nav-back material-symbols-outlined">
@@ -234,9 +233,11 @@
         <div class="frm-details">
           <form
             id="add-contact-frm"
+            class="needs-validation"
             action="#"
             method="post"
             enctype="multipart/form-data"
+            novalidate
           >
             <div class="form-control input-image">
               <label for="add-cdimage">
@@ -253,23 +254,30 @@
 
             <div class="form-control-group">
               <div class="form-control">
-                <label for="title">Title</label>
-                <select name="title" id="title">
+                <label for="title">Title<span class="txt-red">*</span></label>
+                <select name="title" id="title" required>
                   <option value="Mr.">Mr.</option>
                   <option value="Miss.">Miss.</option>
                   <option value="Mrs.">Mrs.</option>
                   <option value="Ms.">Ms.</option>
                 </select>
+                <span class="invalid-feedback">Please select title.</span>
               </div>
 
               <div class="form-control">
-                <label for="fname">First Name</label>
-                <input type="text" name="fname" id="fname" />
+                <label for="fname">
+                  First Name<span class="txt-red">*</span>
+                </label>
+                <input type="text" name="fname" id="fname" required />
+                <span class="invalid-feedback">Please enter first name.</span>
               </div>
 
               <div class="form-control">
-                <label for="lname">Last Name</label>
-                <input type="text" name="lname" id="lname" />
+                <label for="lname">
+                  Last Name<span class="txt-red">*</span>
+                </label>
+                <input type="text" name="lname" id="lname" required />
+                <span class="invalid-feedback">Please enter last name.</span>
               </div>
             </div>
 
@@ -277,17 +285,24 @@
               <div class="form-control">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" />
+                <span class="invalid-feedback">Please enter valid email.</span>
               </div>
 
               <div class="form-control">
-                <label for="mobile">Mobile</label>
-                <input type="text" name="mobile" id="mobile" />
+                <label for="mobile">Mobile<span class="txt-red">*</span></label>
+                <input type="text" name="mobile" id="mobile" required />
+                <span class="invalid-feedback"
+                  >Please enter valid mobile number.</span
+                >
               </div>
             </div>
 
             <div class="form-control">
-              <label for="aline1">Address Line 1</label>
-              <input type="text" name="aline1" id="aline1" />
+              <label for="aline1">
+                Address Line 1<span class="txt-red">*</span>
+              </label>
+              <input type="text" name="aline1" id="aline1" required />
+              <span class="invalid-feedback">Please enter your address.</span>
             </div>
             <div class="form-control">
               <label for="aline2">Address Line 2</label>
@@ -295,16 +310,21 @@
             </div>
             <div class="form-control-group">
               <div class="form-control">
-                <label for="city">City</label>
-                <input type="text" name="city" id="city" />
+                <label for="city">City<span class="txt-red">*</span></label>
+                <input type="text" name="city" id="city" required />
+                <span class="invalid-feedback">Please enter city.</span>
               </div>
               <div class="form-control">
-                <label for="state">State</label>
-                <input type="text" name="state" id="state" />
+                <label for="state">State<span class="txt-red">*</span></label>
+                <input type="text" name="state" id="state" required />
+                <span class="invalid-feedback">Please enter state.</span>
               </div>
               <div class="form-control">
-                <label for="country">Country</label>
-                <input type="text" name="country" id="country" />
+                <label for="country">
+                  Country<span class="txt-red">*</span>
+                </label>
+                <input type="text" name="country" id="country" required />
+                <span class="invalid-feedback">Please enter country.</span>
               </div>
             </div>
             <div class="form-control">
@@ -318,7 +338,7 @@
             </div>
             <div class="form-control">
               <label for="note">Note</label>
-              <textarea name="note" id="note" cols="30" rows="10"></textarea>
+              <textarea name="note" id="note"></textarea>
             </div>
             <div class="form-control btns">
               <button type="submit" class="btn btn-success">
@@ -349,9 +369,11 @@
         <div class="frm-details">
           <form
             id="edit-contact-frm"
+            class="needs-validation"
             action="#"
             method="post"
             enctype="multipart/form-data"
+            novalidate
           >
             <div class="form-control input-image">
               <label for="edit-cdimage">
@@ -368,72 +390,109 @@
 
             <div class="form-control-group">
               <div class="form-control">
-                <label for="title">Title</label>
-                <select name="title" id="title">
+                <label for="edit-title">
+                  Title<span class="txt-red">*</span>
+                </label>
+                <select name="edit-title" id="edit-title" required>
                   <option value="Mr.">Mr.</option>
                   <option value="Miss.">Miss.</option>
                   <option value="Mrs.">Mrs.</option>
                   <option value="Ms.">Ms.</option>
                 </select>
+                <span class="invalid-feedback">Please select title.</span>
               </div>
 
               <div class="form-control">
-                <label for="fname">First Name</label>
-                <input type="text" name="fname" id="fname" />
+                <label for="edit-fname">
+                  First Name<span class="txt-red">*</span>
+                </label>
+                <input type="text" name="edit-fname" id="edit-fname" required />
+                <span class="invalid-feedback">Please enter first name.</span>
               </div>
 
               <div class="form-control">
-                <label for="lname">Last Name</label>
-                <input type="text" name="lname" id="lname" />
+                <label for="edit-lname">
+                  Last Name<span class="txt-red">*</span>
+                </label>
+                <input type="text" name="edit-lname" id="edit-lname" required />
+                <span class="invalid-feedback">Please enter last name.</span>
               </div>
             </div>
 
             <div class="form-control-group">
               <div class="form-control">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" />
+                <label for="edit-email">Email</label>
+                <input type="email" name="edit-email" id="edit-email" />
+                <span class="invalid-feedback">Please enter valid email.</span>
               </div>
 
               <div class="form-control">
-                <label for="mobile">Mobile</label>
-                <input type="text" name="mobile" id="mobile" />
+                <label for="edit-mobile">
+                  Mobile<span class="txt-red">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="edit-mobile"
+                  id="edit-mobile"
+                  required
+                />
+                <span class="invalid-feedback"
+                  >Please enter valid mobile number.</span
+                >
               </div>
             </div>
 
             <div class="form-control">
-              <label for="aline1">Address Line 1</label>
-              <input type="text" name="aline1" id="aline1" />
+              <label for="edit-aline1">
+                Address Line 1<span class="txt-red">*</span>
+              </label>
+              <input type="text" name="edit-aline1" id="edit-aline1" required />
+              <span class="invalid-feedback">Please enter your address.</span>
             </div>
             <div class="form-control">
-              <label for="aline2">Address Line 2</label>
-              <input type="text" name="aline2" id="aline2" />
+              <label for="edit-aline2">Address Line 2</label>
+              <input type="text" name="edit-aline2" id="edit-aline2" />
             </div>
             <div class="form-control-group">
               <div class="form-control">
-                <label for="city">City</label>
-                <input type="text" name="city" id="city" />
+                <label for="edit-city">
+                  City<span class="txt-red">*</span>
+                </label>
+                <input type="text" name="edit-city" id="edit-city" required />
+                <span class="invalid-feedback">Please enter city.</span>
               </div>
               <div class="form-control">
-                <label for="state">State</label>
-                <input type="text" name="state" id="state" />
+                <label for="edit-state">
+                  State<span class="txt-red">*</span>
+                </label>
+                <input type="text" name="edit-state" id="edit-state" required />
+                <span class="invalid-feedback">Please enter state.</span>
               </div>
               <div class="form-control">
-                <label for="country">Country</label>
-                <input type="text" name="country" id="country" />
+                <label for="edit-country">
+                  Country<span class="txt-red">*</span>
+                </label>
+                <input
+                  type="text"
+                  name="edit-country"
+                  id="edit-country"
+                  required
+                />
+                <span class="invalid-feedback">Please enter country.</span>
               </div>
             </div>
             <div class="form-control">
               <label>Tags</label>
-              <input type="radio" name="tags" id="editFrmFamily" />
+              <input type="radio" name="edit-tags" id="editFrmFamily" />
               <label for="editFrmFamily"><span></span>Family</label>
-              <input type="radio" name="tags" id="editFrmFriend" />
+              <input type="radio" name="edit-tags" id="editFrmFriend" />
               <label for="editFrmFriend"><span></span>Friend</label>
-              <input type="radio" name="tags" id="editFrmOffice" />
+              <input type="radio" name="edit-tags" id="editFrmOffice" />
               <label for="editFrmOffice"><span></span>Office</label>
             </div>
             <div class="form-control">
-              <label for="note">Note</label>
-              <textarea name="note" id="note" cols="30" rows="10"></textarea>
+              <label for="edit-note">Note</label>
+              <textarea name="edit-note" id="edit-note"></textarea>
             </div>
             <div class="form-control btns">
               <button type="submit" class="btn btn-success">

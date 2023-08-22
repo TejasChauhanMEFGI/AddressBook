@@ -34,11 +34,9 @@ const themeIcon = document.getElementById("change-theme");
 const darkMode = "dark_mode";
 const lightMode = "light_mode";
 
-// We obtain the current theme
 const getCurrentTheme = () =>
   document.body.classList.contains(darkMode) ? darkMode : lightMode;
 
-// Previously selected theme
 const selectedTheme = localStorage.getItem("selected-theme");
 if (selectedTheme) {
   document.body.classList[selectedTheme === darkMode ? "add" : "remove"](
@@ -47,12 +45,9 @@ if (selectedTheme) {
   themeIcon.innerHTML = selectedTheme === darkMode ? lightMode : darkMode;
 }
 
-// Activate / deactivate the theme manually with the button
 themeButton.addEventListener("click", () => {
-  // Add or remove the dark / light theme
   document.body.classList.toggle(darkMode);
   themeIcon.innerHTML = getCurrentTheme() == darkMode ? lightMode : darkMode;
-  // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());
 });
 
@@ -156,3 +151,21 @@ editCDImage.onchange = (evt) => {
     reader.readAsDataURL(file);
   }
 };
+
+/*===== FORM VALIDATIONS =====*/
+const forms = document.querySelectorAll(".needs-validation");
+
+Array.from(forms).forEach((form) => {
+  form.addEventListener(
+    "submit",
+    (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      form.classList.add("was-validated");
+    },
+    false
+  );
+});

@@ -7,7 +7,7 @@
 :root {
   /*========== Colors ==========*/
   /* Change favorite color */
-  --hue-color: 230; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+  --hue-color: 230; /* Red 0 - Orange 24 - Blue 230 - Purple 250 - Green 142 - Pink 340*/
 
   /* HSL color mode */
   /* Primary Colors */
@@ -199,7 +199,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .form-control-group .form-control {
@@ -209,6 +209,7 @@ img {
 .form-control {
   margin-bottom: 1rem;
 }
+
 .form-control label {
   display: block;
 }
@@ -222,6 +223,7 @@ img {
 .form-control input[type="email"],
 .form-control select,
 .form-control textarea {
+  font-family: var(--body-font);
   border: none;
   background-color: var(--bg-first-color-light);
   border-radius: 0.5rem;
@@ -261,6 +263,19 @@ img {
 .form-control input[type="radio"]:checked + label span {
   border: 3px solid var(--first-color);
   background: var(--first-color);
+}
+
+.txt-red {
+  color: var(--danger-color);
+}
+
+.invalid-feedback {
+  display: none;
+  color: var(--danger-color);
+}
+
+.was-validated :invalid ~ .invalid-feedback {
+  display: block;
 }
 /*==================== NAV ====================*/
 
@@ -477,6 +492,9 @@ body.dark_mode .nav__link:hover {
   font-size: var(--h3-font-size);
   color: var(--first-color);
 }
+.contact__item.active .cimage-txt {
+  background-color: var(--bg-first-color-dark);
+}
 .cinfo {
   margin-right: auto;
 }
@@ -489,6 +507,7 @@ body.dark_mode .nav__link:hover {
   font-size: var(--small-font-size);
   display: flex;
   align-items: center;
+  margin-bottom: 0;
 }
 
 .tag-icon.family {
@@ -609,12 +628,10 @@ address {
   z-index: 50;
   transition: right 0.3s ease-in-out;
   overflow: hidden;
-  /* display: none; */
 }
 .add__details.show,
 .edit__details.show {
   right: 0;
-  /* display: block; */
 }
 
 .add__details .header,
@@ -659,12 +676,11 @@ address {
 }
 .input-image .cdimage {
   width: 150px;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1;
   object-fit: cover;
   border: 2px solid var(--bg-first-color-light);
   border-radius: 50%;
   overflow: hidden;
-  margin-right: 1rem;
 }
 
 .input-image .up-icon {
