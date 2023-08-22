@@ -619,19 +619,21 @@ address {
 .edit__details {
   position: absolute;
   top: 0;
-  right: -100%;
+  left: 100%;
   width: 100%;
   max-width: 700px;
   height: 100dvh;
   background-color: var(--body-color);
   box-shadow: -1px 0px 5px var(--shadow-color);
   z-index: 50;
-  transition: right 0.3s ease-in-out;
   overflow: hidden;
+  transition: All 0.3s ease-in-out;
+  visibility: hidden;
 }
 .add__details.show,
 .edit__details.show {
-  right: 0;
+  visibility: visible;
+  transform: translateX(-100%);
 }
 
 .add__details .header,
