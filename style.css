@@ -648,14 +648,40 @@ address {
   overflow: auto;
 }
 
-#edit-frm-image {
-  width: 100px;
+.input-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-image label {
+  position: relative;
+  cursor: pointer;
+}
+.input-image .cdimage {
+  width: 150px;
   aspect-ratio: 1/1;
   object-fit: cover;
+  border: 2px solid var(--bg-first-color-light);
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 1rem 1rem 0;
-  border: 3px solid var(--bg-first-color-light);
+  margin-right: 1rem;
+}
+
+.input-image .up-icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-medium);
+  color: var(--first-color);
+  background-color: var(--bg-first-color-light);
+  padding: 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.input-image input[type="file"] {
+  display: none;
 }
 
 /*========== BROWSER SETTINGS ==========*/

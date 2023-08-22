@@ -222,7 +222,7 @@
       </div>
 
       <!--==================== ADD DETAILS ====================-->
-      <div class="add__details" id="add__details">
+      <div class="add__details show" id="add__details">
         <div class="header">
           <button id="add-back-btn">
             <span class="nav-back material-symbols-outlined">
@@ -238,9 +238,17 @@
             method="post"
             enctype="multipart/form-data"
           >
-            <div class="form-control">
-              <label for="dp-image">Display Image</label>
-              <input type="file" name="dp-image" id="dp-image" />
+            <div class="form-control input-image">
+              <label for="add-cdimage">
+                <img
+                  id="add-cdimg"
+                  class="cdimage"
+                  src="images/avatar.png"
+                  alt="Display Picture"
+                />
+                <span class="up-icon material-symbols-outlined">upload</span>
+              </label>
+              <input type="file" name="add-cdimage" id="add-cdimage" />
             </div>
 
             <div class="form-control-group">
@@ -345,12 +353,17 @@
             method="post"
             enctype="multipart/form-data"
           >
-            <div class="form-control-group">
-              <img id="edit-frm-image" src="images/dp.jpg" alt="John Doe" />
-              <div class="form-control">
-                <label for="dp-image">Display Image</label>
-                <input type="file" name="dp-image" id="dp-image" />
-              </div>
+            <div class="form-control input-image">
+              <label for="edit-cdimage">
+                <img
+                  id="edit-cdimg"
+                  class="cdimage"
+                  src="images/dp.jpg"
+                  alt="Display Picture"
+                />
+                <span class="up-icon material-symbols-outlined">upload</span>
+              </label>
+              <input type="file" name="edit-cdimage" id="edit-cdimage" />
             </div>
 
             <div class="form-control-group">

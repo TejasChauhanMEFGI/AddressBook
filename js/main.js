@@ -81,7 +81,9 @@ if (detailsClose) {
 const addDetails = document.getElementById("add__details"),
   addDetailsBtn = document.getElementById("add__details_btn"),
   addBackBtn = document.getElementById("add-back-btn"),
-  addCancelBtn = document.getElementById("add-cancel-btn");
+  addCancelBtn = document.getElementById("add-cancel-btn"),
+  addCDImage = document.getElementById("add-cdimage"),
+  addCDImg = document.getElementById("add-cdimg");
 
 /*===== ADD DETAILS SHOW =====*/
 if (addDetailsBtn) {
@@ -102,12 +104,21 @@ if (addCancelBtn) {
     addDetails.classList.remove("show");
   });
 }
+/*===== ADD PAGE IMAGE PREVIEW =====*/
+addCDImage.onchange = (evt) => {
+  const [file] = addCDImage.files;
+  if (file) {
+    addCDImg.src = URL.createObjectURL(file);
+  }
+};
 
 /*==================== EDIT DETAILS SHOW / HIDE ====================*/
 const editDetails = document.getElementById("edit__details"),
   editDetailsBtn = document.getElementById("nav-edit-btn"),
   editBackBtn = document.getElementById("edit-back-btn"),
-  editCancelBtn = document.getElementById("edit-cancel-btn");
+  editCancelBtn = document.getElementById("edit-cancel-btn"),
+  editCDImage = document.getElementById("edit-cdimage"),
+  editCDImg = document.getElementById("edit-cdimg");
 
 /*===== EDIT DETAILS SHOW =====*/
 if (editDetailsBtn) {
@@ -128,3 +139,10 @@ if (editCancelBtn) {
     editDetails.classList.remove("show");
   });
 }
+/*===== EDIT PAGE IMAGE PREVIEW =====*/
+editCDImage.onchange = (evt) => {
+  const [file] = editCDImage.files;
+  if (file) {
+    editCDImg.src = URL.createObjectURL(file);
+  }
+};
