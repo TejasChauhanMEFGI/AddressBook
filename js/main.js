@@ -41,7 +41,9 @@ const getCurrentTheme = () =>
 // Previously selected theme
 const selectedTheme = localStorage.getItem("selected-theme");
 if (selectedTheme) {
-  document.body.classList[selectedTheme === darkMode ? "add" : "remove"](darkMode);
+  document.body.classList[selectedTheme === darkMode ? "add" : "remove"](
+    darkMode
+  );
   themeIcon.innerHTML = selectedTheme === darkMode ? lightMode : darkMode;
 }
 
@@ -62,7 +64,10 @@ const details = document.getElementById("details"),
 /*===== DETAILS SHOW =====*/
 if (contact__items) {
   contact__items.forEach((n) =>
-    n.addEventListener("click", () => { details.classList.toggle("show"); hideMenu(); })
+    n.addEventListener("click", () => {
+      details.classList.toggle("show");
+      hideMenu();
+    })
   );
 }
 /*===== DETAILS HIDE =====*/
