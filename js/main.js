@@ -102,13 +102,18 @@ if (addBackBtn) {
 if (addCancelBtn) {
   addCancelBtn.addEventListener("click", () => {
     addDetails.classList.remove("show");
+    addCDImg.src = "images/avatar.png";
   });
 }
 /*===== ADD PAGE IMAGE PREVIEW =====*/
 addCDImage.onchange = (evt) => {
-  const [file] = addCDImage.files;
+  const file = addCDImage.files[0];
   if (file) {
-    addCDImg.src = URL.createObjectURL(file);
+    var reader = new FileReader();
+    reader.onload = function () {
+      addCDImg.src = reader.result;
+    };
+    reader.readAsDataURL(file);
   }
 };
 
@@ -137,12 +142,17 @@ if (editBackBtn) {
 if (editCancelBtn) {
   editCancelBtn.addEventListener("click", () => {
     editDetails.classList.remove("show");
+    editCDImg.src = "images/avatar.png";
   });
 }
 /*===== EDIT PAGE IMAGE PREVIEW =====*/
 editCDImage.onchange = (evt) => {
   const [file] = editCDImage.files;
   if (file) {
-    editCDImg.src = URL.createObjectURL(file);
+    var reader = new FileReader();
+    reader.onload = function () {
+      editCDImg.src = reader.result;
+    };
+    reader.readAsDataURL(file);
   }
 };
