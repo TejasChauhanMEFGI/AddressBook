@@ -614,6 +614,10 @@ address {
   margin-bottom: 1rem;
 }
 
+.other-info p {
+  text-align: justify;
+}
+
 /*==================== ADD / EDIT ====================*/
 .add__details,
 .edit__details {
