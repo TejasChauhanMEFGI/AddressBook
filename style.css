@@ -12,8 +12,8 @@
   /* HSL color mode */
   /* Primary Colors */
   --first-color: hsl(var(--hue-color), 69%, 61%);
-  --first-color-dark: hsl(var(--hue-color), 57%, 53%);
-  --first-color-light: hsl(var(--hue-color), 92%, 85%);
+  /* --first-color-dark: hsl(var(--hue-color), 57%, 53%);
+  --first-color-light: hsl(var(--hue-color), 92%, 85%); */
   /* BG Colors */
   --body-color: hsl(var(--hue-color), 60%, 99%);
   --bg-first-color: hsl(var(--hue-color), 69%, 90%);
@@ -212,6 +212,7 @@ img {
 
 .form-control label {
   display: block;
+  margin-bottom: 0.3rem;
 }
 
 .form-control input + label {
@@ -240,29 +241,28 @@ img {
   height: 200px;
 }
 
-.form-control input[type="radio"] {
-  display: none;
-}
-
-.form-control input[type="radio"] + label {
-  margin-right: 1rem;
+.radio-container-inline {
   display: inline-flex;
   align-items: center;
 }
 
-.form-control input[type="radio"] + label span {
-  display: inline-block;
+.form-control input[type="radio"] {
+  appearance: none;
   width: 1rem;
   height: 1rem;
   border: 3px solid var(--bg-first-color-light);
   border-radius: 50%;
-  vertical-align: baseline;
-  margin-right: 3px;
+  margin-right: 0.3rem;
 }
 
-.form-control input[type="radio"]:checked + label span {
+.form-control input[type="radio"]:checked {
   border: 3px solid var(--first-color);
   background: var(--first-color);
+}
+
+.form-control input[type="radio"] + label {
+  margin-right: 1rem;
+  margin-bottom: 0;
 }
 
 .txt-red {
